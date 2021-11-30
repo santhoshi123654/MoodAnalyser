@@ -14,15 +14,6 @@ public static MoodAnalyser moodAnalyser;
 		
 		moodAnalyser = new MoodAnalyser();
 	}
-
-	@Test
-	public void analyse_the_mood_if_happy_return_Happy() {
-		
-		String message = "I am in Happy Mode";
-		String presentMood = moodAnalyser.analyseMood(message);
-		
-		assertEquals("Happy", presentMood);	
-	}
 	
 	@Test
 	public void analyse_the_mood_if_sad_return_Sad() {
