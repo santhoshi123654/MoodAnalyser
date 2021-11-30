@@ -5,6 +5,8 @@ import static org.junit.Assert.assertEquals;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import junit.framework.Assert;
+
 public class MoodAnalyserTest {
 
 public static MoodAnalyser moodAnalyser;
@@ -16,19 +18,9 @@ public static MoodAnalyser moodAnalyser;
 	}
 
 	@Test
-
-	public void analyse_the_mood_if_happy_return_Happy() {
-		
-		String message = "I am in Happy Mode";
-		String presentMood = moodAnalyser.analyseMood(message);
-		
-		assertEquals("Happy", presentMood);	
-	}
-	
-	@Test
 	public void analyse_the_mood_if_sad_return_Sad() {
 		
-		String message = "I am in Sad Mode";
+		String message = "I am in Sad Mood";
 		String presentMood = moodAnalyser.analyseMood(message);
 		
 		assertEquals("Sad", presentMood);	
