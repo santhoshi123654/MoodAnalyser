@@ -5,12 +5,10 @@ import static org.junit.Assert.assertEquals;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import junit.framework.Assert;
-
 public class MoodAnalyserTest {
 
 public static MoodAnalyser moodAnalyser;
-	
+String presentMood = null;
 	@BeforeClass
 	public static void initialize() {
 		
@@ -18,12 +16,32 @@ public static MoodAnalyser moodAnalyser;
 	}
 
 	@Test
-	public void analyse_the_mood_if_happy_return_Happy() {
+	public void analyse_the_mood_if_happy_return_Happy()throws InvalidUserMoodException {
 		
-		String message = "I am in Happy Mood";
-		String presentMood = moodAnalyser.analyseMood(message);
+		try {
+			String message = "I am in Happy Mood";
+			String presentMood = moodAnalyser.analyseMood(message);
+			
+			assertEquals("Happy", presentMood);	
+		} 
+		catch (Exception e) {
+			e.printStackTrace();
+		}
 		
-		assertEquals("Happy", presentMood);	
 	}
-
+	
+	@Test
+	public void analyse_the_mood_if_sad_return_Sad() throws InvalidUserMoodException {
+		try {
+			
+			String message = "I am in Sad Mood";
+			String presentMood = moodAnalyser.analyseMood(message);
+			
+			assertEquals("Sad", presentMood);
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+			
+	}
 }
