@@ -4,11 +4,11 @@ public class MoodAnalyser {
 
 	public String analyseMood(String message) {
 		
-		if(message.contains("Sad")) {
+		if(message.contains("any Mood")) {
 			
-			return "Sad";
+			return "Happy";
 		}
-		return null;
+		return "sad";
 
 	}
 }
